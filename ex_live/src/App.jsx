@@ -60,7 +60,7 @@ const App = () => {
               ))
             ) : (
               <tr>
-                <td colSpan="4">empty data</td>
+                <td>empty data</td>
               </tr>
             )}
           </tbody>
