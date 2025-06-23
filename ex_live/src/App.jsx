@@ -37,35 +37,7 @@ const App = () => {
 
   return (
     <>
-      <div>
-        <table>
-          <thead>
-            <tr>
-              <th>User Id</th>
-              <th>ID</th>
-              <th>Title</th>
-              <th>Body</th>
-            </tr>
-          </thead>
-          <tbody>
-            {data && data.length > 0 ? (
-              data.map(item => (
-                <Table
-                  key={item.id}
-                  userId={item.userId}
-                  id={item.id}
-                  title={item.title}
-                  body={item.body}
-                />
-              ))
-            ) : (
-              <tr>
-                <td>empty data</td>
-              </tr>
-            )}
-          </tbody>
-        </table>
-      </div>
+      <Table array={data} />
     </>
   )
 }
