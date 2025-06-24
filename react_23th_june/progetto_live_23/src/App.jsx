@@ -6,6 +6,8 @@ const App = () => {
     password: "",
   });
 
+  const [submit, setSubmit] = useState(false);
+
   const clearForm = () => {
     setForm({
       email: "",
@@ -23,13 +25,14 @@ const App = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(form);
-    clearForm();
+    setSubmit(true);
   };
 
   useEffect(() => {
-    console.log("email e password:", form.email, form.password);
-  }, [form.email, form.password]);
+    if (submit) {
+      console.log("Email e password:", form.email, form.password);
+    }
+  }, [submit, form.email, form.password,]);
 
   return (
     <>
@@ -62,11 +65,13 @@ const App = () => {
           <button type="submit">Registrati</button>
         </div>
       </form>
+      {submit && (
+        <div>
+          <p>Email: {form.email}</p>
+          <p>Password: {form.password}</p>
+        </div>
+      )}
 
-      <div>
-        <p>Email: {form.email}</p>
-        <p>Password: {form.password}</p>
-      </div>
     </>
   );
 };
