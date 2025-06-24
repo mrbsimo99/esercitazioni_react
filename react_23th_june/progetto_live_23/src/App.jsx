@@ -26,6 +26,7 @@ const App = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     setSubmit(true);
+    clearForm();
   };
 
   useEffect(() => {
