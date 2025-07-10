@@ -12,16 +12,16 @@ const Navbar = () => {
     }
 
     return (
-        <nav>
-            <div>
-                <Link to="/">Home</Link>
-                <Link to="/dashboard">Dashboard</Link>
+        <nav className="bg-white shadow-md px-6 py-4 flex justify-between items-center">
+            <div className="flex gap-x-6">
+                <Link className="text-gray-700 font-semibold hover:text-blue-600 transition" to="/">Home</Link>
+                <Link className="text-gray-700 font-semibold hover:text-blue-600 transition" to="/dashboard">Dashboard</Link>
             </div>
-            <div>
-                <div>
+            <div className="flex items-center gap-x-4">
+                <div className="text-gray-700 font-semibold">
                     {user.first_name} {user.last_name}
                 </div>
-                <span style={{ cursor: "pointer" }} onClick={handleLogout}>Logout</span>
+                <span className="cursor-pointer bg-red-600 text-white px-4 py-2 rounded-md font-semibold hover:bg-red-700 transition" style={{ cursor: "pointer" }} onClick={handleLogout}>Logout</span>
             </div>
         </nav>
     )

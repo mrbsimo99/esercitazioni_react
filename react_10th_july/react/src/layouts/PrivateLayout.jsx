@@ -6,7 +6,9 @@ const PrivateLayout = () => {
     return (
         <>
             <Navbar />
-            <Outlet />
+            <main className="p-8 bg-gray-50 min-h-screen">
+                <Outlet />
+            </main>
         </>
     )
 }
