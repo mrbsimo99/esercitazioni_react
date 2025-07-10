@@ -14,11 +14,16 @@ const authSlice = createSlice({
             state.user = payload.user;
             state.token = payload.token;
 
-            memory.set("auth", { ...payload }); // { user: {}, token: "123123" }
+            if (payload.rememberMe) {
+                memory.set("auth", { ...payload }); // { user: {}, token: "123123" }
+            } else {
+                memory.remove("auth");
+            }
         },
         logout: (state) => {
             state.user = null;
             state.token = null;
+            state.rememberMe = false;
 
             memory.remove("auth");
         }
@@ -26,5 +31,4 @@ const authSlice = createSlice({
 });
 
 export const { login, logout } = authSlice.actions;
-
 export default authSlice.reducer;

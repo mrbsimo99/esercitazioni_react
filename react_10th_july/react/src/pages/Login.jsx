@@ -25,7 +25,7 @@ const Login = () => {
 
     const handleRememberMe = (e) => {
         setRememberMe(e.target.checked);
-    };
+    }
 
     const handleLogin = (e) => {
         e.preventDefault();
@@ -37,17 +37,11 @@ const Login = () => {
                 last_name: "Rossi",
                 email: "me@example.com"
             },
-            token: "kjc9wjh8ehgdq0kso.m987cy29830djc09qys980dhy.cxm982gt938hc0qahghsc"
+            token: "kjc9wjh8ehgdq0kso.m987cy29830djc09qys980dhy.cxm982gt938hc0qahghsc",
+            rememberMe
         }
 
         dispatch(login(result));
-
-        if (rememberMe) {
-            memory.set("auth", result);
-        } else {
-            memory.remove("auth");
-        }
-
         navigate("/dashboard")
     }
 
