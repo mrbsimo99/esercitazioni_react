@@ -47,54 +47,56 @@ const Login = () => {
 
     return (
         <>
-            <div className="min-h-screen flex items-center justify-center bg-gray-100">
-                <form
-                    onSubmit={handleLogin}
-                    className="bg-white p-8 rounded-lg shadow-md w-full max-w-md"
-                >
-                    <div className="mb-6">
-                        <label htmlFor="email" className="block text-gray-700 font-semibold mb-2">Email</label>
-                        <input
-                            type="email"
-                            name="email"
-                            id="email"
-                            value={form.email}
-                            onChange={handleInput}
-                            className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-400"
-                        />
-                    </div>
-                    <div className="mb-6">
-                        <label htmlFor="password" className="block text-gray-700 font-semibold mb-2">Password</label>
-                        <input
-                            type="password"
-                            name="password"
-                            id="password"
-                            value={form.password}
-                            onChange={handleInput}
-                            className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-400"
-                        />
-                    </div>
-                    <div className="mb-6 flex items-center">
-                        <input
-                            id="rememberMe"
-                            type="checkbox"
-                            checked={rememberMe}
-                            onChange={handleRememberMe}
-                            className="mr-2"
-                        />
-                        <label htmlFor="rememberMe" className="text-gray-700 select-none cursor-pointer">
-                            Ricordami
-                        </label>
-                    </div>
-                    <div>
-                        <button
-                            type="submit"
-                            className="w-full bg-blue-600 text-white py-3 rounded font-bold hover:bg-blue-700  cursor-pointer"
-                        >
-                            Login
-                        </button>
-                    </div>
-                </form>
+            <div className="min-h-screen flex items-center justify-center bg-gray-100 px-4">
+                <div className="w-full max-w-md bg-white p-8 rounded-lg shadow-md">
+                    <h2 className="text-2xl font-bold text-center text-gray-800 mb-8">
+                        Sign in to your account
+                    </h2>
+                    <form onSubmit={handleLogin}>
+                        <div className="mb-6">
+                            <label htmlFor="email" className="block text-gray-700 font-semibold mb-2">Email</label>
+                            <input
+                                type="email"
+                                name="email"
+                                id="email"
+                                value={form.email}
+                                onChange={handleInput}
+                                className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-400"
+                            />
+                        </div>
+                        <div className="mb-6">
+                            <label htmlFor="password" className="block text-gray-700 font-semibold mb-2">Password</label>
+                            <input
+                                type="password"
+                                name="password"
+                                id="password"
+                                value={form.password}
+                                onChange={handleInput}
+                                className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-400"
+                            />
+                        </div>
+                        <div className="mb-6 flex items-center">
+                            <input
+                                id="rememberMe"
+                                type="checkbox"
+                                checked={rememberMe}
+                                onChange={handleRememberMe}
+                                className="mr-2"
+                            />
+                            <label htmlFor="rememberMe" className="text-gray-700 select-none cursor-pointer">
+                                Ricordami
+                            </label>
+                        </div>
+                        <div>
+                            <button
+                                type="submit"
+                                className="w-full bg-blue-600 text-white py-3 rounded font-bold hover:bg-blue-700 cursor-pointer"
+                            >
+                                Login
+                            </button>
+                        </div>
+                    </form>
+                </div>
             </div>
         </>
     )
