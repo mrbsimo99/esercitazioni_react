@@ -34,7 +34,7 @@ const Login = () => {
             user: {
                 id: "1n81h2bns7gxasd",
                 first_name: "Marco",
-                last_name: "Rossi",
+                last_name: "B",
                 email: "me@example.com"
             },
             token: "kjc9wjh8ehgdq0kso.m987cy29830djc09qys980dhy.cxm982gt938hc0qahghsc",
